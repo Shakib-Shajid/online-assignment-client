@@ -16,27 +16,20 @@ const AuthProvider = ({ children }) => {
     // loading
     const [loading, setloading] = useState(true)
 
-
-    // logout
-
-    const logOut = () => {
+    const createUser = (email, password) => {
         setloading(true);
-        return signOut(auth)
+        return createUserWithEmailAndPassword(auth, email, password)
+
+
     }
 
-    // user information set hpy aikhaney
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('user in the auth state changed', currentUser);
-            setUser(currentUser);
+    //sign in
+    const signIn = (email, password) => {
+        setloading(true);
+        return signInWithEmailAndPassword(auth, email, password);
 
-            setloading(false)
+    }
 
-        });
-        return () => {
-            unSubscribe();
-        }
-    }, [])
 
 
     const authInfo = {
