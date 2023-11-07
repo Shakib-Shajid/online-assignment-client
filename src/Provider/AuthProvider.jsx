@@ -16,19 +16,7 @@ const AuthProvider = ({ children }) => {
     // loading
     const [loading, setloading] = useState(true)
 
-    const createUser = (email, password) => {
-        setloading(true);
-        return createUserWithEmailAndPassword(auth, email, password)
 
-
-    }
-
-    //sign in
-    const signIn = (email, password) => {
-        setloading(true);
-        return signInWithEmailAndPassword(auth, email, password);
-
-    }
     // logout
 
     const logOut = () => {
