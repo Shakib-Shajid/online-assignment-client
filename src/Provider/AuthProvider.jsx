@@ -29,7 +29,26 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
 
     }
+    // logout
 
+    const logOut = () => {
+        setloading(true);
+        return signOut(auth)
+    }
+
+    // user information set hpy aikhaney
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log('user in the auth state changed', currentUser);
+            setUser(currentUser);
+
+            setloading(false)
+
+        });
+        return () => {
+            unSubscribe();
+        }
+    }, [])
 
 
     const authInfo = {
