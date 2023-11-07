@@ -1,30 +1,30 @@
-import {NavLink, Link} from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import userPic from '../../../public/userPic.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
-const {user , logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // console.log("user:", user.email)
 
 
 
-const handleSignOut = () =>{
-    logOut()
-    .then()
-    .catch()
-}
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const navLinks = <>
-      <li><NavLink to ="/">Home</NavLink></li>
-     <li><NavLink to="/addCoffee">Add Assignment</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/addCoffee">Add Assignment</NavLink></li>
         <li><NavLink to="/cart">My Assignment</NavLink></li>
         <li><Link to="/bookings">My Bookings</Link></li>
-    
-      <li><NavLink to ="/login">Login</NavLink></li>
-      {/* <li><NavLink to ="/gallery">Gallery</NavLink></li> */}
-     
-    
+
+        <li><NavLink to="/login">Login</NavLink></li>
+        {/* <li><NavLink to ="/gallery">Gallery</NavLink></li> */}
+
+
     </>
     return (
         <div className="navbar bg-base-100">
@@ -43,9 +43,9 @@ const handleSignOut = () =>{
                         <img src="icecone.jpg" />
                     </div>
                 </label>
-                
+
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    
+
                     <div className="w-10 rounded-full">
                         {/* <img src={userDefaultpic} /> */}
                         {/* <img src='food.jpg' alt="no image" /> */}
@@ -58,25 +58,8 @@ const handleSignOut = () =>{
                     {navLinks}
                 </ul>
             </div>
-                        {/* <img src={userDefaultpic} /> */}
             <div className="navbar-end">
-                {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img src='food.jpg' alt="no image" />
-                    </div>
-                </label>
 
-
-                {
-
-                    user ?
-                        <button onClick={handleSignOut}className="btn btn-error">Sign Out</button>
-                    :
-                        <Link to="/login">
-                            <button className="btn">Login</button>
-                        </Link>
-
-                } */}
                 {
                     user ? <div className="flex justify-evenly items-center">
                         <span>{user.displayName} </span>
@@ -98,8 +81,8 @@ const handleSignOut = () =>{
                             </Link>
                         </div>
                 }
-             
-               
+
+
             </div>
         </div>
     );
