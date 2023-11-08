@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 
 const CartCard = ({ carts, setCarts, cart }) => {
-    const { _id, cartphoto, cartname , cartquantity, carttaste } = cart;
+    const { _id, cartphoto, cartname, cartquantity, carttaste } = cart;
 
     //delete
     const handleDelete = _id => {
@@ -19,9 +19,9 @@ const CartCard = ({ carts, setCarts, cart }) => {
             if (result.isConfirmed) {
 
 
-//cart r kaj korsi
+                //cart r kaj korsi
 
-                fetch(`http://localhost:5000/cart/${_id}`, {
+                fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -48,7 +48,7 @@ const CartCard = ({ carts, setCarts, cart }) => {
                 <figure><img className="w-60" src={cartphoto} alt="Movie" /></figure>
                 <div className=" flex flex-col justify-center items-center gap-2">
                     <h2>Name: {cartname}</h2>
-                   
+
                     <p>Quantity: {cartquantity}</p>
                     <p>Taste: {carttaste}</p>
                     <div className="">

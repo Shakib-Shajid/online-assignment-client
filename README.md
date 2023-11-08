@@ -1,8 +1,13 @@
-# React + Vite
+# Online Assignment Clients
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live link
 
-Currently, two official plugins are available:
+- https://online-assignment-client-4e300.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 5 Features of my website
+
+1. You can all assignment here.
+2. You can create, update and delete assignment.
+3. You can not delete if you are not create the assignment.
+4. You need login to see details.
+5. Use Private route for security.

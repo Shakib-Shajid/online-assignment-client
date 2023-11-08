@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('http://localhost:5000/coffee')
+    loader: () => fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee')
   },
 
   {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   {
     path: 'coffee/:id',
     element: <PrivateRoute><CoffeeDetails></CoffeeDetails></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${params.id}`)
 
 
   },
@@ -46,14 +46,14 @@ const router = createBrowserRouter([
   {
     path: 'updateCoffee/:id',
     element: <UpdtaeCoffee></UpdtaeCoffee>,
-    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${params.id}`)
 
   },
 
   {
     path: '/cart',
     element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-    loader: () => fetch('http://localhost:5000/cart')
+    loader: () => fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/cart')
 
 
   },
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
   {
     path: 'checkout/:id',
     element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)  //error
+    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/services/${params.id}`)  //error
   },
 
   {
