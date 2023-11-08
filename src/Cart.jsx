@@ -17,7 +17,7 @@ const Cart = () => {
 
         <div>
             <Navbar></Navbar>
-            <h1 className='text-6xl text-center font-extrabold  text-blue-400 my-20'>My All Carts</h1>
+            <h1 className='text-6xl text-center font-extrabold  text-blue-400 my-20'>My All Create Assignment</h1>
             <div className='grid md:grid-cols-2 gap-6 '>
 
                 {

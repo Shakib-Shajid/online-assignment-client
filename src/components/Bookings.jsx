@@ -72,7 +72,7 @@ const Bookings = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className="text-3xl font-bold text-center my-3 md:my-6">Assignment Submission: {bookings.length}</h1>
+            <h1 className="text-xl md:text-3xl font-bold text-center my-3 md:my-6">Assignment Submission: {bookings.length}</h1>
 
             <div className="overflow-x-auto">
                 <table className="table">

@@ -1,20 +1,18 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Navbar from "./Navbar/Navbar";
+import Swal from 'sweetalert2'
 
 
 
 const Checkout = () => {
     const service = useLoaderData();
-    const { title, _id } = service;
+    const { _id } = service;
     const { user } = useContext(AuthContext)
     const handleBookService = event => {
         event.preventDefault();
 
-        // const form = event.target;
-        // const name = form.name.value;
-        // const date = form.date.value;
-        // const email = user?.email;
         const form = event.target;
         const name = form.name.value;
         const note = form.note.value;
@@ -40,15 +38,22 @@ const Checkout = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('service booked successfully')
+                    // alert('service booked successfully')
+                    if (data.insertedId) {
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Submitted successfully',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                        })
+                    }
                 }
             })
     }
     return (
         <div>
-            <h2>Assignment Name:{title} </h2>
-
-            <form onSubmit={handleBookService} className="card-body w-1/2 mx-auto">
+            <Navbar></Navbar>
+            <form onSubmit={handleBookService} className="card-body w-full lg:w-1/2 mx-auto">
                 {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> */}
                 <div>
                     <div className="form-control">
@@ -73,18 +78,11 @@ const Checkout = () => {
                     </div>
 
 
-                    {/* <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Due amount</span>
-                        </label>
-                        <input type="text" defaultValue={'$' + price} className="input input-bordered" required />
 
-                    </div> */}
                 </div>
                 <div className="form-control mt-6">
-                    {/* order confirm */}
 
-                    <input className="btn btn-primary btn-block" type="submit" value="Order Confirm" />
+                    <input className="btn btn-primary btn-block" type="submit" value="Confirm Submit" />
                 </div>
             </form>
         </div>
