@@ -68,10 +68,7 @@ const router = createBrowserRouter([
 
   },
 
-  {
-    path: '/signin',
-    // element:<SignIn></SignIn>
-  },
+
   {
     path: 'checkout/:id',
     element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
@@ -86,7 +83,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <React.StrictMode >
     <AuthProvider>  <RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )

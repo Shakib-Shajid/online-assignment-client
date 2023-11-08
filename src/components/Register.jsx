@@ -1,25 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-// import { AuthContext } from "../../Provider/AuthProvider";
-
-
-// import { useState } from "react";
-
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "./Navbar/Navbar";
-
-//
-// import { Link } from "react-router-dom";
-// import Navbar from "../Shared/Navbar/Navbar";
-// import { useContext } from "react";
-// import {  useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-
-
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,10 +13,6 @@ const Register = () => {
 
 
     const { createUser } = useContext(AuthContext);
-
-
-
-
 
     const handleRegister = e => {
         e.preventDefault();
@@ -60,8 +39,8 @@ const Register = () => {
             return;
 
         }
-       
-      //create user
+
+        //create user
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
@@ -71,31 +50,17 @@ const Register = () => {
                 })
             })
             .catch(error => {
-                
                 console.error(error)
             })
-
-
-
     }
- 
-
-
-
 
     return (
         <div>
             <Navbar></Navbar>
-            <h2>register page</h2>
-
-
-
             <div>
                 <h2 className="text-3xl my-10 text-center">Please Register</h2>
 
                 <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto" >
-
-
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
@@ -124,22 +89,12 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button
-                        //  onClick={handleApplyJob} 
-                         className="btn btn-primary">Register</button>
+                        <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
 
                 <p className="text-center mt-4">Already  have an account <Link to="/login" className="text-blue-600 font-bold">Login</Link></p>
             </div>
-
-
-
-            {/* {
-
-                loginError && <p className="text-red-500">{loginError}</p>
-            } */}
-
 
             <ToastContainer />
         </div>

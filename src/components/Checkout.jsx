@@ -46,13 +46,12 @@ const Checkout = () => {
     }
     return (
         <div>
-            <h2>Book Service:{title} </h2>
-
+            <h2>Assignment Name:{title} </h2>
 
             <form onSubmit={handleBookService} className="card-body w-1/2 mx-auto">
                 {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> */}
                 <div>
-                         <div className="form-control">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
@@ -65,7 +64,7 @@ const Checkout = () => {
                         </label>
                         <input type="text" placeholder="PDF Link" name="name" className="input input-bordered" required />
                     </div>
-                    
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Note</span>

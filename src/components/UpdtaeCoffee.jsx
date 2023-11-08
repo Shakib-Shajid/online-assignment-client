@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Navbar from "./Navbar/Navbar";
 
 
 const UpdtaeCoffee = () => {
     const coffee = useLoaderData();
-    const {_id, name, quantity, supplier, taste, date, details, photo } = coffee;
+    const { _id, name, quantity, supplier, taste, date, details, photo } = coffee;
 
 
     const handleUpdateCoffee = event => {
@@ -36,9 +37,9 @@ const UpdtaeCoffee = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount> 0) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
-                        title: 'Sucess!',
+                        title: 'Success!',
                         text: 'Coffee updated successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
@@ -50,93 +51,96 @@ const UpdtaeCoffee = () => {
 
 
     return (
-        <div className="p-5 lg:p-24">
-            <h2 className="text-3xl font-extrabold text-center text-blue-400">Update Assignment: {name}</h2>
-            <form onSubmit={handleUpdateCoffee}>
-                {/* form row */}
-                <div className="md:flex mb-7">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Food Name</span>
-                        </label>
-                        <label className="input-group">
+        <div>
+            <Navbar></Navbar>
+            <div className="p-5 lg:p-24">
+                <h2 className="text-3xl font-extrabold text-center text-blue-400">Update Assignment Name: {name}</h2>
+                <form onSubmit={handleUpdateCoffee}>
+                    {/* form row */}
+                    <div className="md:flex mb-7">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Title</span>
+                            </label>
+                            <label className="input-group">
 
-                            <input type="text" name="name" defaultValue={name} placeholder="Coffee name" className="input input-bordered w-full " />
-                        </label>
+                                <input type="text" name="name" defaultValue={name} placeholder="Coffee name" className="input input-bordered w-full " />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 lg:ml-4">
+                            <label className="label">
+                                <span className="label-text">Marks</span>
+                            </label>
+                            <label className="input-group">
+
+                                <input type="text" name="quantity" defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-control md:w-1/2 lg:ml-4">
-                        <label className="label">
-                            <span className="label-text">Available Quantity</span>
-                        </label>
-                        <label className="input-group">
+                    {/* form supplier row */}
+                    <div className="md:flex mb-7">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <label className="input-group">
 
-                            <input type="text" name="quantity" defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                {/* form supplier row */}
-                <div className="md:flex mb-7">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Supplier Name</span>
-                        </label>
-                        <label className="input-group">
+                                <input type="text" name="supplier" defaultValue={supplier} placeholder="Supplier" className="input input-bordered w-full " />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2  lg:ml-4">
+                            <label className="label">
+                                <span className="label-text">Difficulty Level</span>
+                            </label>
+                            <label className="input-group">
 
-                            <input type="text" name="supplier" defaultValue={supplier} placeholder="Supplier" className="input input-bordered w-full " />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2  lg:ml-4">
-                        <label className="label">
-                            <span className="label-text">Taste</span>
-                        </label>
-                        <label className="input-group">
-
-                            <input type="text" name="taste" defaultValue={taste} placeholder="Taste" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-
-
-                {/* ///////category and details/////// */}
-                <div className="md:flex mb-7">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Category</span>
-                        </label>
-                        <label className="input-group">
-
-                            <input type="date" name="date" defaultValue={date} placeholder="date" className="input input-bordered w-full " />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2  lg:ml-4">
-                        <label className="label">
-                            <span className="label-text">Details</span>
-                        </label>
-                        <label className="input-group">
-
-                            <input type="text" name="details" defaultValue={details} placeholder="Details" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-
-                {/* photo url */}
-                <div className="mb-7">
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Photo Url</span>
-                        </label>
-                        <label className="input-group">
-
-                            <input type="text" name="photo" defaultValue={photo} placeholder="Photo Url" className="input input-bordered w-full " />
-                        </label>
+                                <input type="text" name="taste" defaultValue={taste} placeholder="Taste" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
 
-                </div>
+
+                    {/* ///////category and details/////// */}
+                    <div className="md:flex mb-7">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Due Date</span>
+                            </label>
+                            <label className="input-group">
+
+                                <input type="date" name="date" defaultValue={date} placeholder="date" className="input input-bordered w-full " />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2  lg:ml-4">
+                            <label className="label">
+                                <span className="label-text">Details</span>
+                            </label>
+                            <label className="input-group">
+
+                                <input type="text" name="details" defaultValue={details} placeholder="Details" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+
+                    {/* photo url */}
+                    <div className="mb-7">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Photo Url</span>
+                            </label>
+                            <label className="input-group">
+
+                                <input type="text" name="photo" defaultValue={photo} placeholder="Photo Url" className="input input-bordered w-full " />
+                            </label>
+                        </div>
+
+                    </div>
 
 
-                <input type="submit" value="Update Food" className="btn btn-block bg-error text-white" />
+                    <input type="submit" value="Update Assignment" className="btn btn-block bg-success text-white" />
 
-            </form>
+                </form>
+            </div>
         </div>
     );
 };

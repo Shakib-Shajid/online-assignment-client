@@ -19,15 +19,14 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addCoffee">Add Assignment</NavLink></li>
         <li><NavLink to="/cart">My Assignment</NavLink></li>
-        <li><Link to="/bookings">My Bookings</Link></li>
+        <li><Link to="/bookings">Submission</Link></li>
 
         <li><NavLink to="/login">Login</NavLink></li>
-        {/* <li><NavLink to ="/gallery">Gallery</NavLink></li> */}
 
 
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 max-w-7xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,10 +36,10 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-sm  md:text-xl lg:text-2xl font-bold">Online Group</a>
+                <a className="btn btn-ghost normal-case text-sm md:text-xl lg:text-2xl font-bold -ml-4 md:ml-0 ">Online Group</a>
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img src="icecone.jpg" />
+                        <img src="icecone.jpg" className="hidden md:block" />
                     </div>
                 </label>
 
@@ -62,10 +61,10 @@ const Navbar = () => {
 
                 {
                     user ? <div className="flex justify-evenly items-center">
-                        <span>{user.displayName} </span>
+                        <span className="hidden md:block">{user.displayName} </span>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={user.photoURL} />
+                                <img src={user.photoURL} className="" />
                             </div>
                         </label>
                         <button onClick={handleSignOut} className="btn">Sign out</button>

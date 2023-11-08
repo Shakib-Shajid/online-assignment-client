@@ -19,7 +19,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [loginError, setloginError] = useState('')
 
-    console.log('location in login page' , location)
+    console.log('location in login page', location)
 
 
 
@@ -30,7 +30,7 @@ const Login = () => {
 
         const email = form.get('email')
         const password = form.get('password')
-  
+
 
         console.log(email, password);
         // reset error
@@ -52,10 +52,6 @@ const Login = () => {
 
     }
 
-    ///////////////////////////////////////////
-    //react tostify
-    //
-    // const [loginError] = useState('')
     ///google
     const [user, setUser] = useState(null);
     const auth = getAuth(app);
@@ -63,8 +59,8 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
 
     const handleGoogleSignIn = () => {
-    // console.log('google mama is coming')
-        signInWithPopup(auth , provider)
+        // console.log('google mama is coming')
+        signInWithPopup(auth, provider)
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
@@ -76,11 +72,11 @@ const Login = () => {
 
 
             .catch(error => {
-                console.log('error' , error.message)
+                console.log('error', error.message)
                 // setloginError(error.message)
             })
 
-    
+
     }
 
 
@@ -96,17 +92,10 @@ const Login = () => {
                 console.log(error)
             })
     }
-
-
-
- 
-
-
-///////////////////////////////////////////////////////////////////////////////////
     return (
         <div>
             <Navbar></Navbar>
-          {/* <h1 className="text-center font-semibold">This is login page</h1>   */}
+            {/* <h1 className="text-center font-semibold">This is login page</h1>   */}
 
 
 
@@ -132,9 +121,9 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button 
-                        // onClick={handleApplyJob}
-                         className="btn btn-primary">Login</button>
+                        <button
+                            // onClick={handleApplyJob}
+                            className="btn btn-primary">Login</button>
                     </div>
                 </form>
 
@@ -157,7 +146,7 @@ const Login = () => {
                 </div>
 
                 }
-                
+
             </div>
 
 
@@ -171,13 +160,13 @@ const Login = () => {
 
 
 
-          
 
 
-          
 
-          
-<ToastContainer />
+
+
+
+            <ToastContainer />
         </div>
 
     );

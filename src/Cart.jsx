@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 import CartCard from "./components/CartCard";
+import Navbar from "./components/Navbar/Navbar";
 
 
 const Cart = () => {
@@ -13,11 +14,10 @@ const Cart = () => {
 
 
     return (
-        
+
         <div>
-            
-            <h1 className='text-6xl text-center font-extrabold  text-blue-400 my-20'>My All Carts 
-              </h1>
+            <Navbar></Navbar>
+            <h1 className='text-6xl text-center font-extrabold  text-blue-400 my-20'>My All Carts</h1>
             <div className='grid md:grid-cols-2 gap-6 '>
 
                 {
