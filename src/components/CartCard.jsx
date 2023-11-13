@@ -21,7 +21,7 @@ const CartCard = ({ carts, setCarts, cart }) => {
 
                 //cart r kaj korsi
 
-                fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/cart/${_id}`, {
+                fetch(`https://online-assignment-server-psi.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

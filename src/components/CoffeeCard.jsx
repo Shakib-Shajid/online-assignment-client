@@ -31,7 +31,7 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
                 if (result.isConfirmed) {
 
                     // if(user === )
-                    fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${_id}`, {
+                    fetch(`https://online-assignment-server-psi.vercel.app/coffee/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

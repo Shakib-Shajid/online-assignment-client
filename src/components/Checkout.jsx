@@ -25,7 +25,7 @@ const Checkout = () => {
             // price: price
         }
         console.log(booking)
-        fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/bookings', {
+        fetch('https://online-assignment-server-psi.vercel.app/bookings', {
 
             method: 'POST',
             headers: {

@@ -26,7 +26,7 @@ const UpdtaeCoffee = () => {
         const updatedCoffee = { name, quantity, supplier, taste, date, details, photo }
         console.log(updatedCoffee);
         //send data to the server
-        fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${_id}`, {
+        fetch(`https://online-assignment-server-psi.vercel.app/coffee/${_id}`, {
 
             method: 'PUT',
             headers: {

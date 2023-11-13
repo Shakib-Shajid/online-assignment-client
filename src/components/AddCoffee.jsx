@@ -20,7 +20,7 @@ const AddCoffee = () => {
         const newCoffee = { name, quantity, supplier, date, taste, details, photo }
         console.log(newCoffee);
         //send data to the server
-        fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee', {
+        fetch('https://online-assignment-server-psi.vercel.app/coffee', {
 
             method: 'POST',
             headers: {

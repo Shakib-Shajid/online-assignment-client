@@ -4,7 +4,6 @@ import App from './App.jsx'
 import './index.css'
 
 
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -25,9 +24,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee')
+    loader: () => fetch('https://online-assignment-server-psi.vercel.app/coffee')
   },
-
   {
 
     path: "addCoffee",
@@ -38,7 +36,7 @@ const router = createBrowserRouter([
   {
     path: 'coffee/:id',
     element: <PrivateRoute><CoffeeDetails></CoffeeDetails></PrivateRoute>,
-    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`https://online-assignment-server-psi.vercel.app/coffee/${params.id}`)
 
 
   },
@@ -46,14 +44,14 @@ const router = createBrowserRouter([
   {
     path: 'updateCoffee/:id',
     element: <UpdtaeCoffee></UpdtaeCoffee>,
-    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`https://online-assignment-server-psi.vercel.app/coffee/${params.id}`)
 
   },
 
   {
     path: '/cart',
     element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-    loader: () => fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/cart')
+    loader: () => fetch('https://online-assignment-server-psi.vercel.app/cart')
 
 
   },
@@ -72,7 +70,7 @@ const router = createBrowserRouter([
   {
     path: 'checkout/:id',
     element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-    loader: ({ params }) => fetch(`https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/services/${params.id}`)  //error
+    loader: ({ params }) => fetch(`https://online-assignment-server-psi.vercel.app/services/${params.id}`)  //error
   },
 
   {
@@ -80,6 +78,9 @@ const router = createBrowserRouter([
     path: 'bookings',
     element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
   }
+
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -87,3 +88,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>  <RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
+
+

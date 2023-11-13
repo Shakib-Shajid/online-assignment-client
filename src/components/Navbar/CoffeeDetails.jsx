@@ -22,7 +22,7 @@ const CoffeeDetails = () => {
 
 
         //send data to the server cart
-        fetch('https://online-assignment-server-gq8flh6xl-shakib-shajid.vercel.app/cart', {
+        fetch('https://online-assignment-server-psi.vercel.app/cart', {
 
             method: 'POST',
             headers: {
