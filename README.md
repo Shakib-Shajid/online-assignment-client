@@ -1,9 +1,5 @@
 # Online Assignment Clients
 
-# Live link
-
-- https://online-assignment-client-4e300.web.app/
-
 # 5 Features of my website
 
 1. You can all assignment here.
